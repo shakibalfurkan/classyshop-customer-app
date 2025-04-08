@@ -1,8 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @import "tailwindcss";
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
+}
+
+.container {
+  @apply max-w-[1430px] mx-auto px-2;
+}
+
+.link {
+  @apply text-gray-600 hover:text-[#ff5252] text-sm transition-colors duration-300 font-medium;
 }
