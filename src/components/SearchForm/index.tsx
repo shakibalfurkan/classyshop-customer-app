@@ -10,15 +10,16 @@ import React from "react";
 const SearchForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     console.log("Search submitted", e.currentTarget.searchValue.value);
     // Handle search logic here
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
-      <div className="relative w-full min-w-xl">
+    <form onSubmit={handleSubmit} className="mx-auto">
+      <div className="relative w-full lg:min-w-2xl">
         <input
-          type="search"
+          type="text"
           name="searchValue"
           className="block p-2.5 pr-8 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 outline-0"
           placeholder="Search products here..."
@@ -26,7 +27,7 @@ const SearchForm: React.FC = () => {
         />
         <button
           type="submit"
-          className="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-gray-700 rounded-e-lg z-50 hover:cursor-pointer"
+          className="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-gray-700 rounded-e-lg z-50 hover:cursor-pointer hover:bg-gray-100"
         >
           <svg
             className="w-4 h-4"
