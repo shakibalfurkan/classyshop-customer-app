@@ -27,7 +27,7 @@ export default function HeaderTop() {
         </div>
 
         {/* search bar */}
-        <div className="hidden lg:block">
+        <div className="hidden lg:block flex-1">
           <SearchForm />
         </div>
 

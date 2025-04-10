@@ -1,4 +1,5 @@
 import HeaderTop from "./HeaderTop";
+import Navbar from "./Navbar";
 import TopStrip from "./TopStrip";
 
 export default function Header() {
@@ -6,6 +7,7 @@ export default function Header() {
     <header>
       <TopStrip />
       <HeaderTop />
+      <Navbar />
     </header>
   );
 }
