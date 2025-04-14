@@ -72,7 +72,7 @@ export default function CategorySidebar() {
               </div>
 
               <div
-                className={`w-full basis-full overflow-hidden transition-all duration-300 ease-in-out ${
+                className={`w-full basis-full overflow-hidden transition-all duration-500 ease-in-out ${
                   openMenus.includes(1)
                     ? "max-h-[600px] opacity-100 mt-1"
                     : "max-h-0 opacity-0"
@@ -103,7 +103,7 @@ export default function CategorySidebar() {
                     </div>
 
                     <div
-                      className={`w-full basis-full overflow-hidden transition-all duration-300 ease-in-out ${
+                      className={`w-full basis-full overflow-hidden transition-all duration-500 ease-in-out ${
                         openSubMenus.includes(1)
                           ? "max-h-[600px] opacity-100 mt-1"
                           : "max-h-0 opacity-0"
@@ -138,7 +138,7 @@ export default function CategorySidebar() {
               </div>
 
               <div
-                className={`w-full basis-full overflow-hidden transition-all duration-300 ease-in-out ${
+                className={`w-full basis-full overflow-hidden transition-all duration-500 ease-in-out ${
                   openMenus.includes(2)
                     ? "max-h-[600px] opacity-100 mt-1"
                     : "max-h-0 opacity-0"
@@ -169,7 +169,7 @@ export default function CategorySidebar() {
                     </div>
 
                     <div
-                      className={`w-full basis-full overflow-hidden transition-all duration-300 ease-in-out ${
+                      className={`w-full basis-full overflow-hidden transition-all duration-500 ease-in-out ${
                         openSubMenus.includes(2)
                           ? "max-h-[600px] opacity-100 mt-1"
                           : "max-h-0 opacity-0"
@@ -204,7 +204,7 @@ export default function CategorySidebar() {
               </div>
 
               <div
-                className={`w-full basis-full overflow-hidden transition-all duration-300 ease-in-out ${
+                className={`w-full basis-full overflow-hidden transition-all duration-500 ease-in-out ${
                   openMenus.includes(3)
                     ? "max-h-[600px] opacity-100 mt-1"
                     : "max-h-0 opacity-0"
@@ -235,7 +235,7 @@ export default function CategorySidebar() {
                     </div>
 
                     <div
-                      className={`w-full basis-full overflow-hidden transition-all duration-300 ease-in-out ${
+                      className={`w-full basis-full overflow-hidden transition-all duration-500 ease-in-out ${
                         openSubMenus.includes(3)
                           ? "max-h-[600px] opacity-100 mt-1"
                           : "max-h-0 opacity-0"
