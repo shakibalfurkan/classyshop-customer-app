@@ -1,34 +1,37 @@
 import { Link } from "react-router-dom";
-import SearchForm from "../../SearchForm";
+
 import { Badge } from "@/components/ui/badge";
 import { BsCart3 } from "react-icons/bs";
-import { HiOutlineUser } from "react-icons/hi2";
+
 import { IoIosGitCompare, IoMdHeartEmpty } from "react-icons/io";
+import { IoSearch } from "react-icons/io5";
 
 import CSTooltip from "../CSTooltip/CSTooltip";
-
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import CategorySidebar from "./CategorySidebar/CategorySidebar";
+import { useState } from "react";
+import SearchInput from "@/components/SearchForm";
 
 export default function HeaderTop() {
+  const [showSearchBar, setShowSearchBar] = useState(false);
+
   return (
-    <section className="border-b border-gray-200">
-      <div className="container py-[22px] flex justify-between items-center">
+    <section className="border-b border-gray-200 shadow-sm lg:shadow-none relative">
+      <div className="container py-2 lg:py-[22px] flex justify-between items-center">
+        {/* category sidebar for mobile */}
+        <div className="lg:hidden">
+          <CategorySidebar />
+        </div>
+
         {/* logo */}
         <div className="">
           <Link to="/">
-            <img src="/logo.jpg" alt="logo" className="w-36 md:w-fit" />
+            <img src="/logo.jpg" alt="logo" className="w-36 md:w-40 lg:w-52" />
           </Link>
         </div>
 
         {/* search bar */}
         <div className="hidden lg:block flex-1">
-          <SearchForm />
+          <SearchInput />
         </div>
 
         {/* menu items */}
@@ -49,31 +52,8 @@ export default function HeaderTop() {
 
           {/* icons */}
           <ul className="flex items-center gap-2.5 md:gap-4 lg:gap-[23px]">
-            {/* mobile login menu */}
-            <li className="lg:hidden">
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <HiOutlineUser className="size-6 text-gray-800 hover:text-primary" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-40">
-                  <DropdownMenuGroup>
-                    <Link to="/login">
-                      <DropdownMenuItem className="flex items-center gap-2">
-                        Login
-                      </DropdownMenuItem>
-                    </Link>
-                    <Link to="/register">
-                      <DropdownMenuItem className="flex items-center gap-2">
-                        Register
-                      </DropdownMenuItem>
-                    </Link>
-                  </DropdownMenuGroup>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </li>
-
             {/* compare */}
-            <li>
+            <li className="hidden lg:block">
               <CSTooltip title="Compare">
                 <Link to="/compare" className="relative">
                   <IoIosGitCompare className="size-6 lg:size-[30px] text-gray-800 hover:text-primary transition-colors duration-100" />
@@ -84,7 +64,7 @@ export default function HeaderTop() {
               </CSTooltip>
             </li>
             {/* wishlist */}
-            <li>
+            <li className="hidden lg:block">
               <CSTooltip title="Wishlist">
                 <Link to="/wishlist" className="relative">
                   <IoMdHeartEmpty className="size-6 lg:size-[30px] text-gray-800 hover:text-primary transition-colors duration-100" />
@@ -93,6 +73,17 @@ export default function HeaderTop() {
                   </Badge>
                 </Link>
               </CSTooltip>
+            </li>
+            {/* search button */}
+            <li
+              onClick={() => setShowSearchBar(!showSearchBar)}
+              className="lg:hidden"
+            >
+              <IoSearch
+                className={`size-6 text-gray-800 hover:text-primary transition-colors duration-100 ${
+                  showSearchBar && "text-primary"
+                }`}
+              />
             </li>
             {/* cart */}
             <li>
@@ -108,6 +99,13 @@ export default function HeaderTop() {
           </ul>
         </div>
       </div>
+      {showSearchBar && (
+        <div
+          className={`bg-white shadow-sm lg:hidden border-t border-gray-200 py-2 px-3 w-full absolute top-[100%] left-0 z-10`}
+        >
+          <SearchInput />
+        </div>
+      )}
     </section>
   );
 }

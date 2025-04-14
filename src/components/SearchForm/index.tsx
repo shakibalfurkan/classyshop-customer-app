@@ -1,14 +1,8 @@
-// export default function Search() {
-//   return (
-//     <section>
-//       <h1>This is Search component</h1>
-//     </section>
-//   );
-// }
-import React from "react";
+import { FC, FormEvent } from "react";
+import { IoSearch } from "react-icons/io5";
 
-const SearchForm: React.FC = () => {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+const SearchInput: FC = () => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     console.log("Search submitted", e.currentTarget.searchValue.value);
@@ -29,25 +23,11 @@ const SearchForm: React.FC = () => {
           type="submit"
           className="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-gray-700 rounded-e-lg z-50 hover:cursor-pointer hover:bg-gray-100"
         >
-          <svg
-            className="w-4 h-4"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 20 20"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-            />
-          </svg>
+          <IoSearch className="size-5 text-gray-800" />
         </button>
       </div>
     </form>
   );
 };
 
-export default SearchForm;
+export default SearchInput;

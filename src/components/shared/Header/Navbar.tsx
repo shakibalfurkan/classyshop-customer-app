@@ -5,16 +5,16 @@ import CategorySidebar from "./CategorySidebar/CategorySidebar";
 
 export default function Navbar() {
   return (
-    <section className="hidden lg:block shadow-md">
+    <section className="hidden lg:flex items-center shadow-md min-h-12">
       <div className="container flex items-center justify-between">
         {/* category menu */}
-        <div className="min-w-[260px]">
+        <div className="lg:min-w-60">
           <CategorySidebar />
         </div>
         {/* divider */}
         <div className="hidden lg:block h-[30px] w-[2px] bg-gray-200"></div>
         {/* nav links */}
-        <div className="flex-1 px-2">
+        <div className="flex-1 px-3">
           <ul className="flex items-center gap-4">
             <li>
               <Link to="/" className="link px-1 py-3.5 font-medium">

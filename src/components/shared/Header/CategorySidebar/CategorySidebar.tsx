@@ -1,9 +1,5 @@
 import { Button } from "@/components/ui/button";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+
 import {
   Sheet,
   SheetContent,
@@ -11,13 +7,14 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { FiMinusSquare, FiPlusSquare } from "react-icons/fi";
 
 import { useState } from "react";
 
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { RiMenu2Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { BsPlusLg } from "react-icons/bs";
+import { HiOutlineMinus } from "react-icons/hi2";
 
 export default function CategorySidebar() {
   const [openMenus, setOpenMenus] = useState<number[]>([]);
@@ -39,13 +36,16 @@ export default function CategorySidebar() {
     <section>
       <Sheet>
         <SheetTrigger asChild>
-          <div className="flex items-center gap-2 cursor-pointer px-5 py-[14px] w-fit">
+          <Button
+            variant="ghost"
+            className="lg:flex items-center gap-2 cursor-pointer px-5 py-[14px] w-fit"
+          >
             <RiMenu2Fill className="text-xl mr-1" />
-            <span className="uppercase font-medium text-sm">
+            <span className="uppercase font-medium text-sm hidden lg:block ">
               Shop By Categories
             </span>
-            <MdKeyboardArrowDown className="ml-4 text-lg" />
-          </div>
+            <MdKeyboardArrowDown className="ml-4 text-lg hidden lg:block" />
+          </Button>
         </SheetTrigger>
         <SheetContent side={"left"}>
           <SheetHeader className="border-b border-gray-200">
@@ -67,7 +67,7 @@ export default function CategorySidebar() {
                   size="icon"
                   className="cursor-pointer border-none outline-none"
                 >
-                  {openMenus.includes(1) ? <FiMinusSquare /> : <FiPlusSquare />}
+                  {openMenus.includes(1) ? <HiOutlineMinus /> : <BsPlusLg />}
                 </Button>
               </div>
 
@@ -95,9 +95,9 @@ export default function CategorySidebar() {
                         className="cursor-pointer border-none outline-none"
                       >
                         {openSubMenus.includes(1) ? (
-                          <FiMinusSquare />
+                          <HiOutlineMinus />
                         ) : (
-                          <FiPlusSquare />
+                          <BsPlusLg />
                         )}
                       </Button>
                     </div>
@@ -133,7 +133,7 @@ export default function CategorySidebar() {
                   size="icon"
                   className="cursor-pointer border-none outline-none"
                 >
-                  {openMenus.includes(2) ? <FiMinusSquare /> : <FiPlusSquare />}
+                  {openMenus.includes(2) ? <HiOutlineMinus /> : <BsPlusLg />}
                 </Button>
               </div>
 
@@ -161,9 +161,9 @@ export default function CategorySidebar() {
                         className="cursor-pointer border-none outline-none"
                       >
                         {openSubMenus.includes(2) ? (
-                          <FiMinusSquare />
+                          <HiOutlineMinus />
                         ) : (
-                          <FiPlusSquare />
+                          <BsPlusLg />
                         )}
                       </Button>
                     </div>
@@ -199,7 +199,7 @@ export default function CategorySidebar() {
                   size="icon"
                   className="cursor-pointer border-none outline-none"
                 >
-                  {openMenus.includes(3) ? <FiMinusSquare /> : <FiPlusSquare />}
+                  {openMenus.includes(3) ? <HiOutlineMinus /> : <BsPlusLg />}
                 </Button>
               </div>
 
@@ -227,9 +227,9 @@ export default function CategorySidebar() {
                         className="cursor-pointer border-none outline-none"
                       >
                         {openSubMenus.includes(3) ? (
-                          <FiMinusSquare />
+                          <HiOutlineMinus />
                         ) : (
-                          <FiPlusSquare />
+                          <BsPlusLg />
                         )}
                       </Button>
                     </div>
