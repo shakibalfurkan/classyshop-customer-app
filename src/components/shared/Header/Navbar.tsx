@@ -2,10 +2,42 @@ import { Link } from "react-router-dom";
 
 import rocket from "@/assets/icons/rocket.svg";
 import CategorySidebar from "./CategorySidebar/CategorySidebar";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [scrollDirection, setScrollDirection] = useState("up");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 200) {
+        setScrollDirection("down");
+      } else {
+        setScrollDirection("up");
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
-    <section className="hidden lg:flex items-center shadow-md min-h-12">
+    <section
+      className={`hidden w-full z-50 lg:flex items-center shadow-md min-h-12 transition-transform duration-300 bg-white ${
+        scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"
+      } ${
+        typeof window !== "undefined" && window.scrollY === 0
+          ? ""
+          : "lg:fixed top-0 left-0"
+      }`}
+    >
       <div className="container flex items-center justify-between">
         {/* category menu */}
         <div className="lg:min-w-60">

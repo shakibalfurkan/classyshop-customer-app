@@ -137,7 +137,7 @@ body {
   }
 }
 
-/* For Chrome, Edge, and Safari */
+/* scrollbar styles */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -156,10 +156,4 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #64748b;
-}
-
-/* For Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #cbd5e1 #f1f1f1;
 }
