@@ -7,14 +7,23 @@ import { useEffect, useState } from "react";
 export default function Navbar() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [scrollDirection, setScrollDirection] = useState("up");
+  const [scrolledEnough, setScrolledEnough] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY && currentScrollY > 200) {
-        setScrollDirection("down");
+      // Set if scrolled past 130px
+      if (currentScrollY > 120) {
+        setScrolledEnough(true);
       } else {
+        setScrolledEnough(false);
+      }
+
+      // Only track direction if scrolled enough
+      if (currentScrollY > lastScrollY && currentScrollY > 120) {
+        setScrollDirection("down");
+      } else if (currentScrollY < lastScrollY) {
         setScrollDirection("up");
       }
 
@@ -30,13 +39,11 @@ export default function Navbar() {
 
   return (
     <section
-      className={`hidden w-full z-50 lg:flex items-center shadow-md min-h-12 transition-transform duration-300 bg-white ${
-        scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"
-      } ${
-        typeof window !== "undefined" && window.scrollY === 0
-          ? ""
-          : "lg:fixed top-0 left-0"
-      }`}
+      className={`hidden w-full lg:flex items-center shadow-md min-h-12 transition-transform duration-300 ease-in-out bg-white ${
+        scrolledEnough && scrollDirection === "down"
+          ? "-translate-y-full"
+          : "translate-y-0"
+      } ${scrolledEnough ? "lg:fixed top-0 left-0" : ""} z-[100] relative`}
     >
       <div className="container flex items-center justify-between">
         {/* category menu */}
@@ -58,12 +65,12 @@ export default function Navbar() {
                 Fashion
               </Link>
               <div
-                className="z-10 absolute top-[34px] left-0 bg-white shadow-lg min-w-42
-                opacity-0 translate-y-2 pointer-events-none 
-                group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto 
-                transition-all duration-300 ease-out border-t-3 border-primary"
+                className="absolute top-[34px] left-0 bg-white shadow-lg min-w-42
+  opacity-0 translate-y-2 pointer-events-none 
+  group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto 
+  transition-all duration-300 ease-out border-t-3 border-primary z-50"
               >
-                <ul className="py-2 text-sm text-gray-800 ">
+                <ul className="py-2 text-sm text-gray-800 z-50">
                   <li className="relative group/sub">
                     <Link
                       to="#"
@@ -72,12 +79,12 @@ export default function Navbar() {
                       Apparel
                     </Link>
                     <div
-                      className="z-10 absolute top-[0%] left-[100%] bg-white shadow-lg min-w-44
+                      className="absolute top-[0%] left-[100%] bg-white shadow-lg min-w-44
                 opacity-0 translate-x-2 pointer-events-none 
                 group-hover/sub:opacity-100 group-hover/sub:translate-x-0 group-hover/sub:pointer-events-auto 
                 transition-all duration-300 ease-out"
                     >
-                      <ul className="py-2 text-sm text-gray-800 ">
+                      <ul className="py-2 text-sm text-gray-800">
                         <li>
                           <Link
                             to="#"
@@ -105,12 +112,12 @@ export default function Navbar() {
                       Outerwear
                     </Link>
                     <div
-                      className="z-10 absolute top-[0%] left-[100%] bg-white shadow-lg min-w-44
+                      className="absolute top-[0%] left-[100%] bg-white shadow-lg min-w-44
                 opacity-0 translate-x-2 pointer-events-none 
                 group-hover/sub:opacity-100 group-hover/sub:translate-x-0 group-hover/sub:pointer-events-auto 
                 transition-all duration-300 ease-out"
                     >
-                      <ul className="py-2 text-sm text-gray-800 ">
+                      <ul className="py-2 text-sm text-gray-800">
                         <li>
                           <Link
                             to="#"

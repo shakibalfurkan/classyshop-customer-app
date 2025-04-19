@@ -9,20 +9,29 @@ import { IoSearch } from "react-icons/io5";
 import CSTooltip from "../CSTooltip/CSTooltip";
 import CategorySidebar from "./CategorySidebar/CategorySidebar";
 import { useEffect, useState } from "react";
-import SearchInput from "@/components/SearchForm";
+import SearchInput from "@/components/SearchInput";
 
 export default function HeaderTop() {
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [scrollDirection, setScrollDirection] = useState("up");
+  const [scrolledEnough, setScrolledEnough] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY && currentScrollY > 200) {
-        setScrollDirection("down");
+      // Set if scrolled past 130px
+      if (currentScrollY > 50) {
+        setScrolledEnough(true);
       } else {
+        setScrolledEnough(false);
+      }
+
+      // Only track direction if scrolled enough
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setScrollDirection("down");
+      } else if (currentScrollY < lastScrollY) {
         setScrollDirection("up");
       }
 
@@ -38,13 +47,11 @@ export default function HeaderTop() {
 
   return (
     <section
-      className={`bg-white w-full border-b border-gray-200 shadow-sm lg:shadow-none transition-transform duration-300 ${
-        scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"
-      } ${
-        typeof window !== "undefined" && window.scrollY === 0
-          ? ""
-          : "fixed lg:static top-0 left-0"
-      } `}
+      className={`bg-white w-full border-b border-gray-200 shadow-sm lg:shadow-none transition-transform lg:transform-none duration-300 ${
+        scrolledEnough && scrollDirection === "down"
+          ? "-translate-y-full lg:-translate-y-0"
+          : "translate-y-0"
+      } ${scrolledEnough ? "fixed lg:static top-0 left-0" : ""}`}
     >
       <div className="w-full relative">
         <div className="container py-2 lg:py-[22px] flex justify-between items-center">

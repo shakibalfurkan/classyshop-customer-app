@@ -137,6 +137,12 @@ body {
   }
 }
 
+@layer utilities {
+  .swiper-pagination-bullet-active {
+    @apply !bg-primary;
+  }
+}
+
 /* scrollbar styles */
 ::-webkit-scrollbar {
   width: 8px;
