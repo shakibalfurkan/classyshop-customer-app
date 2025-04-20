@@ -39,15 +39,15 @@ export default function Navbar() {
 
   return (
     <section
-      className={`hidden w-full lg:flex items-center shadow-md min-h-12 transition-transform duration-300 ease-in-out bg-white ${
+      className={`hidden w-full lg:flex items-center shadow-sm min-h-12 transition-transform duration-300 ease-in-out bg-white ${
         scrolledEnough && scrollDirection === "down"
           ? "-translate-y-full"
           : "translate-y-0"
-      } ${scrolledEnough ? "lg:fixed top-0 left-0" : ""} z-[100] relative`}
+      } ${scrolledEnough ? "lg:fixed top-0 left-0" : ""} z-40 relative`}
     >
       <div className="container flex items-center justify-between">
         {/* category menu */}
-        <div className="lg:min-w-60">
+        <div className="lg:min-w-52">
           <CategorySidebar />
         </div>
         {/* divider */}

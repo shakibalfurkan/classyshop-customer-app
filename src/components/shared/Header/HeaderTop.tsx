@@ -51,7 +51,7 @@ export default function HeaderTop() {
         scrolledEnough && scrollDirection === "down"
           ? "-translate-y-full lg:-translate-y-0"
           : "translate-y-0"
-      } ${scrolledEnough ? "fixed lg:static top-0 left-0" : ""}`}
+      } ${scrolledEnough ? "fixed top-0 left-0" : "relative"} z-40`}
     >
       <div className="w-full relative">
         <div className="container py-2 lg:py-[22px] flex justify-between items-center">
@@ -142,9 +142,7 @@ export default function HeaderTop() {
           </div>
         </div>
         {showSearchBar && (
-          <div
-            className={`bg-white shadow-sm lg:hidden border-t border-gray-200 py-2 px-3 w-full absolute top-[100%] left-0 z-10`}
-          >
+          <div className="bg-white shadow-sm lg:hidden border-t border-gray-200 py-2 px-3 w-full absolute top-[100%] left-0 z-[9999]">
             <SearchInput />
           </div>
         )}

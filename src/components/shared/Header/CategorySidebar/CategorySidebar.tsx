@@ -42,14 +42,14 @@ export default function CategorySidebar() {
           >
             <RiMenu2Fill className="text-xl mr-1" />
             <span className="uppercase font-medium text-sm hidden lg:block ">
-              Shop By Categories
+              All Categories
             </span>
             <MdKeyboardArrowDown className="ml-4 text-lg hidden lg:block" />
           </Button>
         </SheetTrigger>
         <SheetContent side={"left"}>
           <SheetHeader className="border-b border-gray-200">
-            <SheetTitle>Shop By Categories</SheetTitle>
+            <SheetTitle>Shop By All Categories</SheetTitle>
           </SheetHeader>
           <div className="px-4">
             {/* menu */}

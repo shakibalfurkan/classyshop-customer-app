@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -12,6 +12,24 @@ export default function Banner() {
   const progressContent = useRef<HTMLSpanElement | null>(null);
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
+
+  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
+
+  useEffect(() => {
+    if (swiperInstance) {
+      if (swiperInstance.params.navigation) {
+        if (typeof swiperInstance.params.navigation !== "boolean") {
+          swiperInstance.params.navigation.prevEl = prevRef.current;
+        }
+
+        if (typeof swiperInstance.params.navigation !== "boolean") {
+          swiperInstance.params.navigation.nextEl = nextRef.current;
+        }
+        swiperInstance.navigation.init();
+        swiperInstance.navigation.update();
+      }
+    }
+  }, [swiperInstance]);
 
   const onAutoplayTimeLeft = (
     swiper: SwiperType,
@@ -30,9 +48,10 @@ export default function Banner() {
   };
 
   return (
-    <section className="container h-50 md:h-[360px] lg:h-[500px] flex items-center justify-center mt-4 lg:mt-5 relative z-0 group">
+    <section className="container h-50 md:h-[360px] lg:h-[500px] flex items-center justify-center pt-4 lg:pt-5 relative z-0 group overflow-hidden">
       <Swiper
-        spaceBetween={30}
+        onSwiper={(swiper) => setSwiperInstance(swiper)}
+        spaceBetween={20}
         centeredSlides={true}
         autoplay={{
           delay: 2500,
@@ -56,7 +75,7 @@ export default function Banner() {
         loop={true}
         modules={[Autoplay, Pagination, Navigation]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className="w-full h-full block relative"
+        className="w-full h-full z-0"
       >
         {Array.from({ length: 9 }).map((_, index) => (
           <SwiperSlide
@@ -94,14 +113,14 @@ export default function Banner() {
       {/* Prev Button */}
       <button
         ref={prevRef}
-        className="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto bg-white hover:bg-primary hover:text-white rounded-md p-1.5 transition-all duration-300 ease-in-out absolute top-1/2 -translate-y-1/2 -left-4 translate-x-[-20px] group-hover:translate-x-8 z-20 ml-4"
+        className="opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto bg-white hover:bg-primary hover:text-white rounded-md p-1.5 transition-all duration-300 ease-in-out absolute top-1/2 -translate-y-1/2 -left-4 translate-x-[-20px] group-hover:translate-x-8 z-20 ml-4 shadow-sm cursor-pointer"
       >
         <IoIosArrowBack className="text-xl" />
       </button>
 
       <button
         ref={nextRef}
-        className="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto bg-white hover:bg-primary hover:text-white rounded-md p-1.5 transition-all duration-300 ease-in-out absolute top-1/2 -translate-y-1/2 -right-4 translate-x-[20px] group-hover:-translate-x-8 z-20 mr-4"
+        className="opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto bg-white hover:bg-primary hover:text-white rounded-md p-1.5 transition-all duration-300 ease-in-out absolute top-1/2 -translate-y-1/2 -right-4 translate-x-[20px] group-hover:-translate-x-8 z-20 mr-4 shadow-sm cursor-pointer"
       >
         <IoIosArrowForward className="text-xl" />
       </button>

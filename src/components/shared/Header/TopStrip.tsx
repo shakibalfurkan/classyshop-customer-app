@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function TopStrip() {
   return (
-    <section className="py-2 border-b border-gray-200">
+    <section className="py-2 border-b border-gray-200 bg-white">
       <div className="container lg:flex items-center justify-between">
         <p className="text-sm text-gray-500 hidden lg:block font-medium font-secondary">
           Get up to 50% off new season styles, limited time only
