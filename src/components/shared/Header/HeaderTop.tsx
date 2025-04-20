@@ -49,9 +49,9 @@ export default function HeaderTop() {
     <section
       className={`bg-white w-full border-b border-gray-200 shadow-sm lg:shadow-none transition-transform lg:transform-none duration-300 ${
         scrolledEnough && scrollDirection === "down"
-          ? "-translate-y-full lg:-translate-y-0"
+          ? "-translate-y-full"
           : "translate-y-0"
-      } ${scrolledEnough ? "fixed top-0 left-0" : "relative"} z-40`}
+      } ${scrolledEnough ? "fixed lg:static top-0 left-0" : "relative"} z-40`}
     >
       <div className="w-full relative">
         <div className="container py-2 lg:py-[22px] flex justify-between items-center">

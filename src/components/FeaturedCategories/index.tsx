@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import categoryImage from "../../assets/categoryimagelist.jpg";
 
-export default function HomeCategorySlider() {
+export default function FeaturedCategories() {
   return (
-    <section className="container pt-9 lg:pt-[70px] relative z-0 mb-80">
+    <section className="container mt-9 lg:mt-[70px]">
       <h2 className="text-xl md:text-[22px] font-medium mb-[20px] capitalize">
         Featured Categories
       </h2>

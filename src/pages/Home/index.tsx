@@ -1,13 +1,15 @@
 import AnnouncementMarquee from "@/components/AnnouncementMarquee";
 import Banner from "@/components/Banner";
-import HomeCategorySlider from "@/components/HomeCategorySlider";
+import DeliveryNoticeBar from "@/components/DeliveryNoticeBar";
+import FeaturedCategories from "@/components/FeaturedCategories";
 
 export default function Home() {
   return (
     <section className="min-h-screen">
       <Banner />
       <AnnouncementMarquee />
-      <HomeCategorySlider />
+      <FeaturedCategories />
+      <DeliveryNoticeBar />
     </section>
   );
 }
