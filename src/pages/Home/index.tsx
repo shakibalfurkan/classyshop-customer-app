@@ -2,6 +2,7 @@ import AnnouncementMarquee from "@/components/AnnouncementMarquee";
 import Banner from "@/components/Banner";
 import DeliveryNoticeBar from "@/components/DeliveryNoticeBar";
 import FeaturedCategories from "@/components/FeaturedCategories";
+import FeaturedOffers from "@/components/FeaturedOffers";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <AnnouncementMarquee />
       <FeaturedCategories />
       <DeliveryNoticeBar />
+      <FeaturedOffers />
     </section>
   );
 }
