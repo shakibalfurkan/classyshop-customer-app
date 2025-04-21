@@ -2,7 +2,7 @@ import carImage from "../../assets/images/delivery-car.svg";
 
 export default function DeliveryNoticeBar() {
   return (
-    <section className="container mt-9 lg:mt-[70px]">
+    <section className="container mt-10 lg:mt-[70px]">
       <div className="flex flex-col lg:flex-row gap-3 items-center justify-between bg-white rounded-lg p-4 lg:py-6 lg:px-10 border-2 border-primary">
         <div className="flex items-center gap-3">
           <img

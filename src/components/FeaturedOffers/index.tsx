@@ -5,7 +5,7 @@ import FeaturedOffersBanner from "../FeaturedOffersBanner";
 
 export default function FeaturedOffers() {
   return (
-    <section className="container mt-[70px] mb-80">
+    <section className="container mt-5 lg:mt-[70px] mb-80">
       <div className="flex flex-col md:flex-row items-center gap-4">
         <FeaturedOffersBanner
           image={advertisement1}
