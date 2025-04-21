@@ -1,31 +1,28 @@
-import advertisement1 from "../../assets/images/advertisements/advertisement-1.jpg";
-import advertisement2 from "../../assets/images/advertisements/advertisement-2.jpg";
-import advertisement3 from "../../assets/images/advertisements/advertisement-3.jpg";
 import FeaturedOffersBanner from "../FeaturedOffersBanner";
 
 export default function FeaturedOffers() {
   return (
-    <section className="container mt-5 lg:mt-[70px] mb-80">
+    <section className="container mt-5 lg:mt-[70px]">
       <div className="flex flex-col md:flex-row items-center gap-4">
         <FeaturedOffersBanner
-          image={advertisement1}
+          image="https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/cms-banner-1.jpg"
           alt="advertisement banner image 1"
           link="#"
-          title="Best Offer For Smartphone"
+          title="S22 Samsung Smartphone"
           price="250.00"
         />
         <FeaturedOffersBanner
-          image={advertisement2}
+          image="https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/cms-banner-2.jpg"
           alt="advertisement banner image 2"
           link="#"
-          title="Best prices on chairs"
+          title="Armchair Mad By shopstic"
           price="190.00"
         />
         <FeaturedOffersBanner
-          image={advertisement3}
+          image="https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/cms-banner-3.jpg"
           alt="advertisement banner image 3"
           link="#"
-          title="Best price on headphones!"
+          title="Noise Wireless Headphones"
           price="129.00"
         />
       </div>

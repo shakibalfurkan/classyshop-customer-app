@@ -1,8 +1,10 @@
-import AnnouncementMarquee from "@/components/AnnouncementMarquee";
-import Banner from "@/components/Banner";
-import DeliveryNoticeBar from "@/components/DeliveryNoticeBar";
-import FeaturedCategories from "@/components/FeaturedCategories";
-import FeaturedOffers from "@/components/FeaturedOffers";
+import AnnouncementMarquee from "@/components/Home/AnnouncementMarquee";
+import Banner from "@/components/Home/Banner";
+import DeliveryNoticeBar from "@/components/Home/DeliveryNoticeBar";
+import FeaturedCategories from "@/components/Home/FeaturedCategories";
+import FeaturedOffers from "@/components/Home/FeaturedOffers";
+import PopularProducts from "@/components/Home/PopularProducts";
+import ProductHighlightBanner from "@/components/Home/ProductHighlightBanner";
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       <FeaturedCategories />
       <DeliveryNoticeBar />
       <FeaturedOffers />
+      <PopularProducts />
+      <ProductHighlightBanner />
     </section>
   );
 }

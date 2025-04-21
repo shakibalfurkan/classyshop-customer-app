@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import categoryImage from "../../assets/categoryimagelist.jpg";
+import categoryImage from "../../../assets/categoryimagelist.jpg";
 
 export default function FeaturedCategories() {
   return (

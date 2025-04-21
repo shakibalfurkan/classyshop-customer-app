@@ -1,4 +1,4 @@
-import carImage from "../../assets/images/delivery-car.svg";
+import carImage from "../../../assets/images/delivery-car.svg";
 
 export default function DeliveryNoticeBar() {
   return (
