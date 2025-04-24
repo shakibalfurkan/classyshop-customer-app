@@ -143,6 +143,20 @@ body {
   }
 }
 
+@keyframes customFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.custom-float {
+  animation: customFloat 2s ease-in-out infinite;
+}
+
 /* scrollbar styles */
 ::-webkit-scrollbar {
   width: 8px;
