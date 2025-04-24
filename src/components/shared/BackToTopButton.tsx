@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
 import { RiArrowUpDoubleLine } from "react-icons/ri";
 const BackToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
