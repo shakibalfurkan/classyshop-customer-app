@@ -43,6 +43,7 @@ export default function FeaturedCategories() {
         grid={{ rows: 2, fill: "row" }}
         slidesPerGroup={3}
         spaceBetween={10}
+        rewind={true}
         speed={800}
         breakpoints={{
           480: {
@@ -66,13 +67,13 @@ export default function FeaturedCategories() {
           924: {
             slidesPerView: 7,
             slidesPerGroup: 7,
-            speed: 1300,
+            speed: 1500,
             spaceBetween: 10,
           },
           1025: {
             slidesPerView: 8,
             slidesPerGroup: 8,
-            speed: 1500,
+            speed: 1800,
             spaceBetween: 10,
           },
         }}

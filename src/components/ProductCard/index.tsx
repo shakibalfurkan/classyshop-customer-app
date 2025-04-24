@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
+import { Badge } from "../ui/badge";
+import { IoIosGitCompare, IoMdHeartEmpty } from "react-icons/io";
+import { HiArrowsPointingOut } from "react-icons/hi2";
 
 export default function ProductCard() {
   const title =
@@ -27,12 +30,12 @@ export default function ProductCard() {
       <div className="p-3.5 border-t border-gray-100">
         <p className="text-[13px] text-gray-600 mb mb-1.5">Gadget Zone</p>
 
-        <h3 className="text-sm font-medium w-full mb-2">
+        <h3 className="text-sm w-full mb-2">
           <Link
             to={"/"}
             className="w-full hover:text-primary hover:underline transition-all duration-100"
           >
-            {title.length > 50 ? title.slice(0, 50) + "..." : title}
+            {title.length > 53 ? title.slice(0, 53) + "..." : title}
           </Link>
         </h3>
         <div className="mb-2">
@@ -47,7 +50,30 @@ export default function ProductCard() {
           </span>
         </div>
       </div>
-      {/* <div className="absolute top-1.5 right-1"></div> Apple AirPods Max Over-Ear Wireless Headphone Apple . */}
+
+      <div className="absolute top-3 left-3 flex flex-col gap-1">
+        <p className="bg-primary text-white text-[11px] font-medium px-1.5 py-0.5 rounded w-fit tracking-wide">
+          Save $8 (-14%)
+        </p>
+        <p className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-0 transition-all duration-500 bg-[#44b367] text-white uppercase text-[11px] font-medium px-1.5 py-0.5 rounded w-fit tracking-wide">
+          New
+        </p>
+        <p className="bg-[#ff8e3e] uppercase text-white text-[11px] tracking-wide font-medium px-1.5 py-0.5 rounded w-fit">
+          Sold Out
+        </p>
+      </div>
+
+      <div className="absolute top-3 right-3 flex flex-col gap-1 -translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
+        <button className="p-2 rounded-full bg-white hover:bg-primary border border-gray-300 text-center transition-all duration-[50ms] hover:text-white cursor-pointer">
+          <IoMdHeartEmpty className="text-xl" />
+        </button>
+        <button className="p-2 rounded-full bg-white hover:bg-primary border border-gray-300 text-center transition-all duration-[50ms] hover:text-white cursor-pointer">
+          <IoIosGitCompare className="text-xl" />
+        </button>
+        <button className="p-2 rounded-full bg-white hover:bg-primary border border-gray-300 text-center transition-all duration-[50ms] hover:text-white cursor-pointer">
+          <HiArrowsPointingOut className="text-xl" />
+        </button>
+      </div>
     </section>
   );
 }
