@@ -1,6 +1,6 @@
 export default function ProductHighlightBanner() {
   return (
-    <section className="container mt-10 lg:mt-[70px] mb-80">
+    <section className="container mt-10 lg:mt-[70px]">
       <div className="rounded-sm relative group overflow-hidden w-full max-h-[100px]">
         <img
           src="https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/offer-banner.jpg"

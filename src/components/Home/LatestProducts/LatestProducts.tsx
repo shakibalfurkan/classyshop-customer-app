@@ -7,13 +7,13 @@ import "swiper/css/pagination";
 // import required modules
 import { Navigation, Pagination } from "swiper/modules";
 
-import ProductCard from "@/components/ProductCard";
 import { useEffect, useRef, useState } from "react";
 
 import type { Swiper as SwiperType } from "swiper";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import ProductCard from "@/components/ProductCard";
 
-export default function PopularProducts() {
+export default function LatestProducts() {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
 
@@ -35,10 +35,10 @@ export default function PopularProducts() {
     }
   }, [swiperInstance]);
   return (
-    <section className="container mt-10 lg:mt-[70px]">
+    <section className="container mt-10 lg:mt-[70px]  mb-80">
       <div className="mb-5 flex items-center justify-between">
         {/* Title */}
-        <h1 className="text-xl md:text-[22px] font-medium">Popular Products</h1>
+        <h1 className="text-xl md:text-[22px] font-medium">Latest Products</h1>
         {/* slider buttons */}
         <div className="space-x-2 mr-2">
           {/* Prev Button */}
