@@ -1,4 +1,4 @@
-import carImage from "../../../assets/images/delivery-car.svg";
+import carImage from "../../../assets/icons/delivery-car.svg";
 
 export default function DeliveryNoticeBar() {
   return (
@@ -17,12 +17,12 @@ export default function DeliveryNoticeBar() {
         <div className="w-0.5 h-[40px] hidden lg:block bg-gray-200"></div>
         <div>
           <p className="text-gray-800 flex-1 text-center">
-            Free Delivery Now On Your First Order and over $200
+            Free Delivery Now On Your First Order and over ৳5,000
           </p>
         </div>
         <div className="w-0.5 h-[40px] hidden lg:block bg-gray-200"></div>
         <div>
-          <h1 className="text-xl lg:text-3xl font-medium">- Only $200*</h1>
+          <h1 className="text-xl lg:text-3xl font-medium">- Only ৳5,000*</h1>
         </div>
       </div>
     </section>

@@ -67,14 +67,14 @@ export default function FeaturedCategories() {
           924: {
             slidesPerView: 7,
             slidesPerGroup: 7,
-            speed: 1500,
-            spaceBetween: 10,
+            speed: 1200,
+            spaceBetween: 12,
           },
           1025: {
             slidesPerView: 8,
             slidesPerGroup: 8,
-            speed: 1800,
-            spaceBetween: 10,
+            speed: 1500,
+            spaceBetween: 12,
           },
         }}
         navigation={{
@@ -106,16 +106,16 @@ export default function FeaturedCategories() {
       {/* Prev Button */}
       <button
         ref={prevRef}
-        className="bg-white hover:bg-primary hover:pointer-events-auto hover:text-white rounded-full p-1 lg:p-1.5 transition-all duration-300 ease-in-out absolute top-1/2 -translate-y-1/2 left-2 z-20 ml-2 shadow-sm cursor-pointer border border-gray-300"
+        className="bg-white hover:bg-primary hover:text-white rounded-full p-1 lg:p-1.5 transition-all duration-300 ease-in-out absolute top-1/2 -translate-y-1/2 left-2 z-20 ml-2 shadow cursor-pointer border border-gray-300"
       >
-        <IoIosArrowBack className="text-xl" />
+        <IoIosArrowBack className="text-lg" />
       </button>
-
+      {/* Next Button */}
       <button
         ref={nextRef}
-        className="bg-white hover:bg-primary hover:pointer-events-auto hover:text-white rounded-full p-1 lg:p-1.5 transition-all duration-300 ease-in-out absolute top-1/2 -translate-y-1/2 right-2 z-20 mr-2 shadow-sm cursor-pointer border border-gray-300"
+        className="bg-white hover:bg-primary hover:text-white rounded-full p-1 lg:p-1.5 transition-all duration-300 ease-in-out absolute top-1/2 -translate-y-1/2 right-2 z-20 mr-2 shadow cursor-pointer border border-gray-300"
       >
-        <IoIosArrowForward className="text-xl" />
+        <IoIosArrowForward className="text-lg" />
       </button>
     </section>
   );
