@@ -35,7 +35,7 @@ export default function LatestProducts() {
     }
   }, [swiperInstance]);
   return (
-    <section className="container mt-10 lg:mt-[70px]  mb-80">
+    <section className="container mt-10 lg:mt-[70px]">
       <div className="mb-5 flex items-center justify-between">
         {/* Title */}
         <h1 className="text-xl md:text-[22px] font-medium">Latest Products</h1>

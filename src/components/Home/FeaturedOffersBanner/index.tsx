@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import taka from "../../../assets/icons/taka.svg";
 
 type FeaturedOffersBannerProps = {
   image: string;
