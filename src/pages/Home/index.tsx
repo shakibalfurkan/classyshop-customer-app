@@ -2,6 +2,7 @@ import AnnouncementMarquee from "@/components/Home/AnnouncementMarquee";
 import Banner from "@/components/Home/Banner";
 import DeliveryNoticeBar from "@/components/Home/DeliveryNoticeBar";
 import ExclusiveDeals from "@/components/Home/ExclusiveDeals/ExclusiveDeals";
+import FeaturedBlogs from "@/components/Home/FeaturedBlogs/FeaturedBlogs";
 import FeaturedCategories from "@/components/Home/FeaturedCategories";
 import FeaturedOffers from "@/components/Home/FeaturedOffers";
 import FeaturedProducts from "@/components/Home/FeaturedProducts/FeaturedProducts";
@@ -22,6 +23,7 @@ export default function Home() {
       <LatestProducts />
       <FeaturedProducts />
       <ExclusiveDeals />
+      <FeaturedBlogs />
     </section>
   );
 }

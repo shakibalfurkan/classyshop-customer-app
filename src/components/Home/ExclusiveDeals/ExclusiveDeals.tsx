@@ -2,7 +2,7 @@ import ExclusiveDealsBanner from "../ExclusiveDealsBanner/ExclusiveDealsBanner";
 
 export default function ExclusiveDeals() {
   return (
-    <section className="container mt-10 lg:mt-[70px]  mb-80">
+    <section className="container mt-10 lg:mt-[70px]">
       <div className="flex flex-col md:flex-row items-center gap-2.5 lg:gap-3">
         <ExclusiveDealsBanner
           img="https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/cms-banner-6.jpg"

@@ -64,10 +64,16 @@ export default function ProductCard() {
       </div>
 
       <div className="absolute top-3 right-3 lg:top-3.5 lg:right-3.5 flex flex-col gap-1 -translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
-        <button className="p-2 rounded-full bg-white hover:bg-primary border border-gray-300 text-center transition-all duration-[50ms] hover:text-white cursor-pointer">
+        <button
+          title="Add To Wishlist"
+          className="p-2 rounded-full bg-white hover:bg-primary border border-gray-300 text-center transition-all duration-[50ms] hover:text-white cursor-pointer"
+        >
           <IoMdHeartEmpty className="text-xl" />
         </button>
-        <button className="p-2 rounded-full bg-white hover:bg-primary border border-gray-300 text-center transition-all duration-[50ms] hover:text-white cursor-pointer">
+        <button
+          title="Add To Compare"
+          className="p-2 rounded-full bg-white hover:bg-primary border border-gray-300 text-center transition-all duration-[50ms] hover:text-white cursor-pointer"
+        >
           <IoIosGitCompare className="text-xl" />
         </button>
         <button className="p-2 rounded-full bg-white hover:bg-primary border border-gray-300 text-center transition-all duration-[50ms] hover:text-white cursor-pointer">
