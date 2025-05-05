@@ -14,14 +14,14 @@ export default function Navbar() {
       const currentScrollY = window.scrollY;
 
       // Set if scrolled past 130px
-      if (currentScrollY > 120) {
+      if (currentScrollY > 40) {
         setScrolledEnough(true);
       } else {
         setScrolledEnough(false);
       }
 
       // Only track direction if scrolled enough
-      if (currentScrollY > lastScrollY && currentScrollY > 120) {
+      if (currentScrollY > lastScrollY && currentScrollY > 40) {
         setScrollDirection("down");
       } else if (currentScrollY < lastScrollY) {
         setScrollDirection("up");

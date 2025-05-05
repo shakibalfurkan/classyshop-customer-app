@@ -35,60 +35,62 @@ export default function FeaturedBlogs() {
     }
   }, [swiperInstance]);
   return (
-    <section className="container mt-10 lg:mt-[70px] mb-80">
-      <div className="mb-5 flex items-center justify-between">
-        {/* Title */}
-        <h1 className="text-xl md:text-[22px] font-medium">From The Blog</h1>
-        {/* slider buttons */}
-        <div className="space-x-2 mr-2">
-          {/* Prev Button */}
-          <button
-            ref={prevRef}
-            className="bg-white hover:bg-primary hover:text-white rounded-full p-1 lg:p-1.5 transition-all duration-300 ease-in-out z-20 shadow cursor-pointer border border-gray-300"
-          >
-            <IoIosArrowBack className="text-lg" />
-          </button>
-          {/* Next Button */}
-          <button
-            ref={nextRef}
-            className="bg-white hover:bg-primary hover:text-white rounded-full p-1 lg:p-1.5 transition-all duration-300 ease-in-out z-20 shadow cursor-pointer border border-gray-300"
-          >
-            <IoIosArrowForward className="text-lg" />
-          </button>
+    <section className="mt-10 lg:mt-20">
+      <div className="container">
+        <div className="mb-5 flex items-center justify-between">
+          {/* Title */}
+          <h1 className="text-xl md:text-[22px] font-medium">From The Blog</h1>
+          {/* slider buttons */}
+          <div className="space-x-2 mr-2">
+            {/* Prev Button */}
+            <button
+              ref={prevRef}
+              className="bg-white hover:bg-primary hover:text-white rounded-full p-1 lg:p-1.5 transition-all duration-300 ease-in-out z-20 shadow cursor-pointer border border-gray-300"
+            >
+              <IoIosArrowBack className="text-lg" />
+            </button>
+            {/* Next Button */}
+            <button
+              ref={nextRef}
+              className="bg-white hover:bg-primary hover:text-white rounded-full p-1 lg:p-1.5 transition-all duration-300 ease-in-out z-20 shadow cursor-pointer border border-gray-300"
+            >
+              <IoIosArrowForward className="text-lg" />
+            </button>
+          </div>
         </div>
-      </div>
-      <div>
-        <Swiper
-          onSwiper={(swiper) => setSwiperInstance(swiper)}
-          slidesPerView={1}
-          spaceBetween={10}
-          breakpoints={{
-            480: {
-              slidesPerView: 2,
-              spaceBetween: 10,
-            },
-            769: {
-              slidesPerView: 3,
-              spaceBetween: 10,
-            },
-            1025: {
-              slidesPerView: 4,
-              spaceBetween: 10,
-            },
-          }}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
-          rewind={true}
-          modules={[Pagination, Navigation]}
-        >
-          {Array.from({ length: 10 }, (_, index) => (
-            <SwiperSlide key={index} className="mb-1">
-              <BlogCard />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <div>
+          <Swiper
+            onSwiper={(swiper) => setSwiperInstance(swiper)}
+            slidesPerView={1}
+            spaceBetween={10}
+            breakpoints={{
+              480: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+              769: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+              1025: {
+                slidesPerView: 4,
+                spaceBetween: 10,
+              },
+            }}
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+            rewind={true}
+            modules={[Pagination, Navigation]}
+          >
+            {Array.from({ length: 10 }, (_, index) => (
+              <SwiperSlide key={index} className="mb-1">
+                <BlogCard />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </section>
   );
