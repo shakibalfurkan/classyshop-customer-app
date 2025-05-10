@@ -9,6 +9,7 @@ import FeaturedProducts from "@/components/Home/FeaturedProducts/FeaturedProduct
 import LatestProducts from "@/components/Home/LatestProducts/LatestProducts";
 import PopularProducts from "@/components/Home/PopularProducts";
 import ProductHighlightBanner from "@/components/Home/ProductHighlightBanner";
+import Footer from "@/components/shared/Footer";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <FeaturedProducts />
       <ExclusiveDeals />
       <FeaturedBlogs />
+      <Footer />
     </section>
   );
 }

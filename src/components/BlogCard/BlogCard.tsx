@@ -21,13 +21,11 @@ export default function BlogCard() {
           to="#"
           className="text-[17px] font-medium tracking-tight text-gray-900 hover:text-primary transition duration-200"
         >
-          Noteworthy technology 2021 acquisitions Noteworthy technology
-          acquisitions 2021
+          Noteworthy technology 2021 acquisitions technology acquisitions
         </Link>
         <p className="mb-3 text-[15px] mt-1.5 text-gray-600">
           Here are the biggest enterprise technology acquisitions of 2021 so
-          far, in reverse chronological order. far, in reverse chronological
-          order.
+          far, in reverse. far, in reverse chronological order.
         </p>
         <Link
           to="#"
