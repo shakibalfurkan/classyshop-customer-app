@@ -7,6 +7,20 @@ import { LiaShippingFastSolid } from "react-icons/lia";
 import { PiKeyReturn } from "react-icons/pi";
 import { RiCustomerService2Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { FaFacebookF } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaPinterestP,
+  FaXTwitter,
+  FaYoutube,
+} from "react-icons/fa6";
+
+import carteBleue from "@/assets/images/footer/carte_bleue.png";
+import visa from "@/assets/images/footer/visa.png";
+import masterCard from "@/assets/images/footer/master_card.png";
+import americanExpress from "@/assets/images/footer/american_express.png";
+import paypal from "@/assets/images/footer/paypal.png";
+
 const servicesData = [
   {
     id: 1,
@@ -42,7 +56,7 @@ const servicesData = [
 
 export default function Footer() {
   return (
-    <section className="bg-white mt-20">
+    <footer className="bg-white mt-20">
       {/* services block */}
       <div className="container py-14 lg:py-[70px] grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-between">
         {/* Service */}
@@ -61,10 +75,10 @@ export default function Footer() {
         ))}
       </div>
       {/* footer links */}
-      <div className="border-t border-gray-300 pt-10 pb-20 lg:py-16">
+      <div className="border-t border-gray-200 py-10 lg:py-16">
         <div className="container flex flex-col gap-8 lg:flex-row lg:gap-0 justify-between">
           {/* contact us section */}
-          <section className="lg:pr-[100px] lg:mr-[100px] lg:border-r border-r-gray-300">
+          <section className="lg:pr-[100px] lg:mr-[100px] lg:border-r border-r-gray-200">
             <h2 className="text-lg font-medium mb-4 lg:mb-6">Contact us</h2>
             <div className="space-y-4">
               <div className="text-sm text-gray-500 space-y-2">
@@ -222,12 +236,13 @@ export default function Footer() {
                 type="email"
                 name="subscriptionEmail"
                 placeholder="Your Email Address"
-                className="py-[22px] mb-2.5 min-w-full"
+                className="py-5 mb-2.5 min-w-full"
               />
               <Button
                 type="submit"
                 size={"lg"}
-                className="hover:bg-secondary transition-colors duration-300 px-8 py-[22px]"
+                className="hover:bg-secondary transition-colors duration-300 px-8 py-5 cursor-pointer"
+                disabled
               >
                 Subscribe
               </Button>
@@ -244,6 +259,52 @@ export default function Footer() {
           </section>
         </div>
       </div>
-    </section>
+      {/* footer end */}
+      <div className="pt-4 pb-20 lg:py-4 border-t border-gray-200">
+        <div className="container flex flex-col lg:flex-row gap-4 items-center justify-between">
+          {/* social links */}
+          <ul className="flex items-center gap-2.5">
+            <li className="text-gray-900 hover:text-white transition-all duration-300 rounded-full bg-white hover:bg-primary border border-gray-300">
+              <Link to={"/"} className="flex items-center justify-center p-2.5">
+                <FaFacebookF className="text-[15px]" />
+              </Link>
+            </li>
+            <li className="text-gray-900 hover:text-white transition-all duration-300 rounded-full bg-white hover:bg-primary border border-gray-300">
+              <Link to={"/"} className="flex items-center justify-center p-2.5">
+                <FaXTwitter className="text-[15px]" />
+              </Link>
+            </li>
+            <li className="text-gray-900 hover:text-white transition-all duration-300 rounded-full bg-white hover:bg-primary border border-gray-300">
+              <Link to={"/"} className="flex items-center justify-center p-2.5">
+                <FaYoutube className="text-[15px]" />
+              </Link>
+            </li>
+            <li className="text-gray-900 hover:text-white transition-all duration-300 rounded-full bg-white hover:bg-primary border border-gray-300">
+              <Link to={"/"} className="flex items-center justify-center p-2.5">
+                <FaPinterestP className="text-[15px]" />
+              </Link>
+            </li>
+            <li className="text-gray-900 hover:text-white transition-all duration-300 rounded-full bg-white hover:bg-primary border border-gray-300">
+              <Link to={"/"} className="flex items-center justify-center p-2.5">
+                <FaInstagram className="text-[15px]" />
+              </Link>
+            </li>
+          </ul>
+
+          <div className="order-3 lg:order-none">
+            <p className="text-sm text-gray-500">
+              &copy; {new Date().getFullYear()} Classyshop. All Rights Reserved.
+            </p>
+          </div>
+          <div className="flex items-center gap-1">
+            <img src={carteBleue} alt="carte_bleue" />
+            <img src={visa} alt="visa" />
+            <img src={masterCard} alt="master_card" />
+            <img src={americanExpress} alt="american_express" />
+            <img src={paypal} alt="paypal" />
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 }
