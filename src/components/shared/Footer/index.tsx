@@ -265,27 +265,47 @@ export default function Footer() {
           {/* social links */}
           <ul className="flex items-center gap-2.5">
             <li className="text-gray-900 hover:text-white transition-all duration-300 rounded-full bg-white hover:bg-primary border border-gray-300">
-              <Link to={"/"} className="flex items-center justify-center p-2.5">
+              <Link
+                to={"https://www.facebook.com"}
+                target="_blank"
+                className="flex items-center justify-center p-2.5"
+              >
                 <FaFacebookF className="text-[15px]" />
               </Link>
             </li>
             <li className="text-gray-900 hover:text-white transition-all duration-300 rounded-full bg-white hover:bg-primary border border-gray-300">
-              <Link to={"/"} className="flex items-center justify-center p-2.5">
+              <Link
+                to={"https://x.com"}
+                target="_blank"
+                className="flex items-center justify-center p-2.5"
+              >
                 <FaXTwitter className="text-[15px]" />
               </Link>
             </li>
             <li className="text-gray-900 hover:text-white transition-all duration-300 rounded-full bg-white hover:bg-primary border border-gray-300">
-              <Link to={"/"} className="flex items-center justify-center p-2.5">
+              <Link
+                to={"https://www.youtube.com"}
+                target="_blank"
+                className="flex items-center justify-center p-2.5"
+              >
                 <FaYoutube className="text-[15px]" />
               </Link>
             </li>
             <li className="text-gray-900 hover:text-white transition-all duration-300 rounded-full bg-white hover:bg-primary border border-gray-300">
-              <Link to={"/"} className="flex items-center justify-center p-2.5">
+              <Link
+                to={"https://www.pinterest.com"}
+                target="_blank"
+                className="flex items-center justify-center p-2.5"
+              >
                 <FaPinterestP className="text-[15px]" />
               </Link>
             </li>
             <li className="text-gray-900 hover:text-white transition-all duration-300 rounded-full bg-white hover:bg-primary border border-gray-300">
-              <Link to={"/"} className="flex items-center justify-center p-2.5">
+              <Link
+                to={"https://www.instagram.com"}
+                target="_blank"
+                className="flex items-center justify-center p-2.5"
+              >
                 <FaInstagram className="text-[15px]" />
               </Link>
             </li>

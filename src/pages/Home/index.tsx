@@ -19,10 +19,10 @@ export default function Home() {
       <FeaturedCategories />
       <DeliveryNoticeBar />
       <FeaturedOffers />
-      <PopularProducts />
+      <FeaturedProducts />
       <ProductHighlightBanner />
       <LatestProducts />
-      <FeaturedProducts />
+      <PopularProducts />
       <ExclusiveDeals />
       <FeaturedBlogs />
       <Footer />

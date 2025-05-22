@@ -164,8 +164,8 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link to="/drugs" className="link px-1 py-3.5 font-medium">
-                Drugs
+              <Link to="/new-arrivals" className="link px-1 py-3.5 font-medium">
+                New Arrivals
               </Link>
             </li>
             <li>

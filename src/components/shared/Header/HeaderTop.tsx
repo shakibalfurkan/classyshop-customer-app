@@ -55,10 +55,8 @@ export default function HeaderTop() {
     >
       <div className="w-full relative">
         <div className="container py-2 lg:py-[22px] flex justify-between items-center">
-          {/* category sidebar for mobile */}
-          <div className="lg:hidden">
-            <CategorySidebar />
-          </div>
+          {/* menubar for mobile */}
+          <div className="lg:hidden">Menu</div>
 
           {/* logo */}
           <div className="">
