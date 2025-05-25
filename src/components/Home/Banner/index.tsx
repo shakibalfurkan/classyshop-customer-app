@@ -82,9 +82,15 @@ export default function Banner() {
           {Array.from({ length: 9 }).map((_, index) => (
             <SwiperSlide
               key={index}
-              className="flex items-center justify-center h-full text-2xl font-semibold bg-blue-400 rounded-sm"
+              className="flex items-center justify-center h-full text-2xl font-semibold overflow-hidden rounded-sm"
             >
-              Slide {index + 1}
+              <Link to={"/"} className="w-full h-full">
+                <img
+                  src="https://demos.codezeel.com/prestashop/PRS21/PRS210502/modules/cz_imageslider/views/img/sample-2.jpg"
+                  alt=""
+                  className="h-full w-full object-cover"
+                />
+              </Link>
             </SwiperSlide>
           ))}
 
@@ -127,14 +133,15 @@ export default function Banner() {
           <IoIosArrowForward className="text-xl" />
         </button>
       </section>
-      <section className="w-full flex flex-col md:flex-row justify-between lg:flex-col gap-3">
-        <div className="rounded-sm w-[350px] h-[236px] relative overflow-hidden group">
+
+      <section className="w-full flex flex-col items-center md:flex-row justify-between lg:flex-col gap-3">
+        <div className="rounded-sm max-w-[350px] max-h-[236px] md:w-[350px] md:h-[236px] relative overflow-hidden group">
           <img
             src="https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/sub-banner-1.jpg"
             alt="Banner 1"
             className="rounded-sm h-full w-full group-hover:scale-110 transition-all duration-700 ease-out"
           />
-          <div className="absolute top-12 left-8 max-w-[170px]">
+          <div className="absolute top-1/5 left-8 max-w-[170px]">
             <h2 className="text-2xl font-medium capitalize">
               Samsung Gear VR Camera
             </h2>
@@ -147,13 +154,13 @@ export default function Banner() {
             </Link>
           </div>
         </div>
-        <div className="rounded-sm w-[350px] md:h-[236px] relative overflow-hidden group">
+        <div className="rounded-sm max-w-[350px] max-h-[236px] md:w-[350px] md:h-[236px] relative overflow-hidden group">
           <img
             src="https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/sub-banner-1.jpg"
             alt="Banner 1"
             className="rounded-sm h-full w-full group-hover:scale-110 transition-all duration-700 ease-out"
           />
-          <div className="absolute top-12 left-8 max-w-[170px]">
+          <div className="absolute top-1/5 left-8 max-w-[170px]">
             <h2 className="text-2xl font-medium capitalize">
               Samsung Gear VR Camera
             </h2>
