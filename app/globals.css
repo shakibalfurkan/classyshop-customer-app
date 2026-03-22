@@ -7,9 +7,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-heading);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -46,77 +45,247 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* ── Shadows ───────────────────────────────────── */
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+
+  /* ── Semantic colors ───────────────────────────── */
+  --color-trust: var(--color-trust);
+  --color-trust-bg: var(--color-trust-bg);
+
+  --color-success: var(--color-success);
+  --color-success-bg: var(--color-success-bg);
+  --color-success-text: var(--color-success-text);
+
+  --color-warning: var(--color-warning);
+  --color-warning-bg: var(--color-warning-bg);
+  --color-warning-text: var(--color-warning-text);
+
+  --color-danger: var(--color-danger);
+  --color-danger-bg: var(--color-danger-bg);
+  --color-danger-text: var(--color-danger-text);
+
+  --color-vendor: var(--color-vendor);
+  --color-vendor-bg: var(--color-vendor-bg);
+  --color-vendor-text: var(--color-vendor-text);
+
+  --color-admin: var(--color-admin);
+  --color-admin-bg: var(--color-admin-bg);
+  --color-admin-text: var(--color-admin-text);
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  /* ── Page & Surfaces ──────────────────────────────────── */
+  --background: oklch(0.985 0.003 262.881); /* #F8FAFF — blue-tinted canvas  */
+  --foreground: oklch(0.21 0.034 264.665); /* #0F172A — soft slate black     */
+
+  --card: oklch(1 0 0); /* #FFFFFF — product card surface */
+  --card-foreground: oklch(0.21 0.034 264.665);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --popover-foreground: oklch(0.21 0.034 264.665);
+
+  /* ── Primary — Royal Blue #2563EB ─────────────────────── */
+  --primary: oklch(0.546 0.245 262.881); /* #2563EB                        */
+  --primary-foreground: oklch(1 0 0); /* #FFFFFF — max contrast on blue */
+
+  /* ── Secondary — Pale blue tint ──────────────────────── */
+  --secondary: oklch(0.945 0.028 262.881); /* #EFF3FF — light blue bg        */
+  --secondary-foreground: oklch(
+    0.31 0.14 262.881
+  ); /* #1E3A8A — dark blue text       */
+
+  /* ── Muted — Softer background areas ─────────────────── */
+  --muted: oklch(0.963 0.012 262.881); /* #F1F5FF — muted canvas         */
+  --muted-foreground: oklch(
+    0.556 0.027 264.364
+  ); /* #64748B — muted text           */
+
+  /* ── Accent — Hover states, chips, highlights ─────────── */
+  --accent: oklch(0.925 0.045 262.881); /* #DBEAFE — soft blue accent     */
+  --accent-foreground: oklch(
+    0.38 0.16 262.881
+  ); /* #1D4ED8 — accent text          */
+
+  /* ── Destructive — Errors, delete, danger ─────────────── */
+  --destructive: oklch(0.637 0.237 25.331); /* #DC2626 — standard danger red  */
+  --destructive-foreground: oklch(1 0 0);
+
+  /* ── Borders & Inputs ─────────────────────────────────── */
+  --border: oklch(0.929 0.022 262.881); /* #E2EAFF — blue-tinted border   */
+  --input: oklch(0.929 0.022 262.881);
+  --ring: oklch(0.546 0.245 262.881); /* #2563EB — focus ring           */
+
+  /* ── Sidebar (Admin / Vendor Dashboard) ──────────────── */
+  --sidebar: oklch(0.972 0.018 262.881); /* #F0F4FF — sidebar bg           */
+  --sidebar-foreground: oklch(0.21 0.034 264.665);
+  --sidebar-primary: oklch(
+    0.546 0.245 262.881
+  ); /* Active nav item                */
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(
+    0.925 0.045 262.881
+  ); /* Nav hover state                */
+  --sidebar-accent-foreground: oklch(0.38 0.16 262.881);
+  --sidebar-border: oklch(0.929 0.022 262.881);
+  --sidebar-ring: oklch(0.546 0.245 262.881);
+
+  /* ── Charts — Blue-led palette with complementary ramp ── */
+  --chart-1: oklch(0.546 0.245 262.881); /* Royal Blue — primary series    */
+  --chart-2: oklch(0.623 0.214 259); /* Blue-500 — secondary series    */
+  --chart-3: oklch(0.62 0.19 145); /* Emerald — revenue, growth      */
+  --chart-4: oklch(0.72 0.18 75); /* Amber — warning, pending       */
+  --chart-5: oklch(0.65 0.19 300); /* Purple — vendor segment        */
+
+  /* ── Radius ───────────────────────────────────────────── */
+  --radius: 0.5rem;
+
+  /* ── Typography ───────────────────────────────────────── */
   --font-heading: "Poppins", sans-serif;
   --font-body: "Roboto", sans-serif;
+
+  /* ── Shadows — critical for e-commerce product cards ──── */
+  --shadow-sm: 0 1px 2px 0 oklch(0.546 0.245 262.881 / 0.06);
+  --shadow-md:
+    0 4px 12px -2px oklch(0.546 0.245 262.881 / 0.1),
+    0 2px 4px -2px oklch(0.546 0.245 262.881 / 0.06);
+  --shadow-lg:
+    0 10px 24px -4px oklch(0.546 0.245 262.881 / 0.12),
+    0 4px 8px -4px oklch(0.546 0.245 262.881 / 0.08);
+  --shadow-xl:
+    0 20px 40px -6px oklch(0.546 0.245 262.881 / 0.16),
+    0 8px 16px -6px oklch(0.546 0.245 262.881 / 0.1);
+  --shadow-2xl:
+    0 25px 50px -12px oklch(0.546 0.245 262.881 / 0.2),
+    0 10px 20px -12px oklch(0.546 0.245 262.881 / 0.12);
+
+  --color-trust: oklch(0.546 0.245 262.881);
+  --color-trust-bg: oklch(0.925 0.045 262.881);
+
+  /* Success — order confirmed, in stock, payment complete */
+  --color-success: oklch(0.527 0.154 145); /* #16A34A */
+  --color-success-bg: oklch(0.951 0.052 145); /* #F0FDF4 */
+  --color-success-text: oklch(0.365 0.132 145); /* #166534 */
+
+  /* Warning — low stock, pending shipment, action needed */
+  --color-warning: oklch(0.685 0.162 60); /* #D97706 */
+  --color-warning-bg: oklch(0.962 0.059 80); /* #FFFBEB */
+  --color-warning-text: oklch(0.476 0.157 55); /* #92400E */
+
+  /* Danger — out of stock, payment failed, error */
+  --color-danger: oklch(0.637 0.237 25.331); /* #DC2626 */
+  --color-danger-bg: oklch(0.971 0.042 27); /* #FFF1F2 */
+  --color-danger-text: oklch(0.443 0.22 25); /* #9F1239 */
+
+  /* Vendor — multi-vendor badge, seller identity */
+  --color-vendor: oklch(0.65 0.19 300); /* Purple  */
+  --color-vendor-bg: oklch(0.95 0.042 300); /* #FAF5FF */
+  --color-vendor-text: oklch(0.42 0.175 300); /* #6B21A8 */
+
+  --color-admin: oklch(0.637 0.237 25.331); /* Red    — #DC2626 */
+  --color-admin-bg: oklch(0.971 0.042 27); /* #FFF1F2 */
+  --color-admin-text: oklch(0.443 0.22 25); /* #9F1239 */
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* ── Page & Surfaces ──────────────────────────────────── */
+  --background: oklch(0.14 0.03 264); /* #0B1120 — deep blue-black      */
+  --foreground: oklch(0.985 0.002 247.839); /* #F1F5F9 — soft white text      */
+
+  --card: oklch(0.21 0.034 264.665); /* #131E35 — elevated surface     */
+  --card-foreground: oklch(0.985 0.002 247.839);
+  --popover: oklch(0.21 0.034 264.665);
+  --popover-foreground: oklch(0.985 0.002 247.839);
+
+  /* ── Primary — Brighter blue for dark bg ──────────────── */
+  --primary: oklch(0.638 0.228 262.881); /* #3B82F6 — vivid on dark        */
+  --primary-foreground: oklch(1 0 0);
+
+  /* ── Secondary ────────────────────────────────────────── */
+  --secondary: oklch(0.228 0.042 264); /* #1E2D4A — dark blue surface    */
+  --secondary-foreground: oklch(
+    0.92 0.01 247
+  ); /* #CBD5E1 — muted text           */
+
+  /* ── Muted ────────────────────────────────────────────── */
+  --muted: oklch(0.228 0.032 264);
+  --muted-foreground: oklch(
+    0.704 0.04 256.788
+  ); /* #94A3B8                        */
+
+  /* ── Accent ───────────────────────────────────────────── */
+  --accent: oklch(0.278 0.055 264); /* #1E3A8A — deep accent bg       */
+  --accent-foreground: oklch(
+    0.875 0.065 264
+  ); /* #BFDBFE — light blue text      */
+
+  /* ── Destructive ──────────────────────────────────────── */
+  --destructive: oklch(0.704 0.191 22.216); /* #EF4444 — brighter on dark     */
+  --destructive-foreground: oklch(1 0 0);
+
+  /* ── Borders & Inputs ─────────────────────────────────── */
+  --border: oklch(1 0 0 / 9%); /* Subtle white border            */
+  --input: oklch(1 0 0 / 13%);
+  --ring: oklch(0.638 0.228 262.881); /* #3B82F6 — focus ring           */
+
+  /* ── Sidebar ──────────────────────────────────────────── */
+  --sidebar: oklch(0.17 0.036 264); /* #0F1929 — deeper than card     */
+  --sidebar-foreground: oklch(0.985 0.002 247.839);
+  --sidebar-primary: oklch(0.638 0.228 262.881);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.228 0.042 264);
+  --sidebar-accent-foreground: oklch(0.875 0.065 264);
+  --sidebar-border: oklch(1 0 0 / 9%);
+  --sidebar-ring: oklch(0.638 0.228 262.881);
+
+  /* ── Charts — Brighter palette on dark surfaces ────────── */
+  --chart-1: oklch(0.638 0.228 262.881); /* #3B82F6 — bright blue          */
+  --chart-2: oklch(0.72 0.18 200); /* Teal                           */
+  --chart-3: oklch(0.7 0.18 145); /* Green                          */
+  --chart-4: oklch(0.78 0.18 75); /* Amber                          */
+  --chart-5: oklch(0.72 0.19 300); /* Purple                         */
+
+  /* Deep Navy Shadows for Dark Mode */
+  --shadow-sm: 0 1px 3px 0 oklch(0.14 0.03 264 / 0.5);
+  --shadow-md:
+    0 4px 12px -2px oklch(0.14 0.03 264 / 0.6),
+    0 2px 4px -2px oklch(0.14 0.03 264 / 0.4);
+  --shadow-lg:
+    0 10px 24px -4px oklch(0.14 0.03 264 / 0.7),
+    0 4px 8px -4px oklch(0.14 0.03 264 / 0.5);
+  --shadow-xl:
+    0 20px 40px -6px oklch(0.14 0.03 264 / 0.8),
+    0 8px 16px -6px oklch(0.14 0.03 264 / 0.6);
+  --shadow-2xl:
+    0 25px 50px -12px oklch(0.14 0.03 264 / 0.9),
+    0 10px 20px -12px oklch(0.14 0.03 264 / 0.7);
+
+  /* ── Semantic overrides for dark mode ─────────────────── */
+  --color-trust: oklch(0.638 0.228 262.881);
+  --color-trust-bg: oklch(0.228 0.042 264);
+
+  --color-success: oklch(0.7 0.18 145);
+  --color-success-bg: oklch(0.2 0.06 145);
+  --color-success-text: oklch(0.85 0.14 145);
+
+  --color-warning: oklch(0.78 0.18 75);
+  --color-warning-bg: oklch(0.22 0.06 75);
+  --color-warning-text: oklch(0.9 0.14 80);
+
+  --color-danger: oklch(0.704 0.191 22.216);
+  --color-danger-bg: oklch(0.22 0.06 27);
+  --color-danger-text: oklch(0.86 0.17 22);
+
+  --color-vendor: oklch(0.72 0.19 300);
+  --color-vendor-bg: oklch(0.22 0.055 300);
+  --color-vendor-text: oklch(0.87 0.14 300);
+
+  --color-admin: oklch(0.704 0.191 22.216);
+  --color-admin-bg: oklch(0.22 0.06 27);
+  --color-admin-text: oklch(0.86 0.17 22);
 }
 
 @layer base {
@@ -125,7 +294,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-body);
   }
   html {
     @apply font-sans;
